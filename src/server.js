@@ -10,5 +10,5 @@ app.use("/api", kategori);
 app.use("/api", produk);
 
 app.listen(3000, () => {
-  console.log("Server Masuk");
+  console.log("Server Masuk di Port 3000");
 });

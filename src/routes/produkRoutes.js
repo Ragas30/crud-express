@@ -1,4 +1,5 @@
-import { getProduk } from "../controllers/produkController";
+import { createProduk, deleteProduk, getProduk, getProdukById, updateProduk } from "../controllers/produkController.js";
+import express from 'express'
 
 export const produk = express.Router();
 produk.post("/produk", createProduk);

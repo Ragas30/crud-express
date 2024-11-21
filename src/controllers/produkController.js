@@ -1,7 +1,4 @@
-import { kategori } from "../routes/kategoriRoute.js";
-import { Prisma } from "../utils/dataBase.js";
-
-const prisma = new Prisma.Client();
+import { prisma } from "../utils/dataBase.js";
 
 export const createProduk = async (req, res) => {
   const { kategoriId, namaProduk, jumlah, deskripsi } = req.body;
@@ -59,7 +56,7 @@ export const getProdukById = async (req, res) => {
 };
 
 export const updateProduk = async (req, res) => {
-    const { kategoriId, namaProduk, jumlah, deskripsi } = req.body;
+  const { kategoriId, namaProduk, jumlah, deskripsi } = req.body;
   try {
     let produk = await prisma.produk.update({
       where: { id: Number(req.params.id) },
@@ -83,7 +80,7 @@ export const updateProduk = async (req, res) => {
       }
     })
     res.status(200).json({
-        message: "Produk Dimodif ges",
+      message: "Produk Dimodif ges",
       data: produk,
     });
   } catch (error) {
